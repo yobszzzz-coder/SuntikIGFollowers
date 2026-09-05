@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOBSZ STORE | Suntik Followers IG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oxanium', sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+
+        .qris-area img {
+            pointer-events: auto;
+            user-select: auto;
+            -webkit-user-drag: auto;
+        }
+
+        /* === UKURAN LOGO/GAMBAR — BISA DIATUR DISINI === */
+        .icon-logo {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .logo-profile {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--biru-muda);
+            box-shadow: 0 0 20px rgba(100, 181, 246, 0.4);
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        :root {
+            --biru-tua: #0b2447;
+            --biru-sedang: #19376d;
+            --biru: #1e88e5;
+            --biru-muda: #64b5f6;
+            --biru-terang: #bbdefb;
+            --putih: #ffffff;
+            --abu-terang: #e3f2fd;
+            --hitam: #0f172a;
+            --kuning: #f59e0b;
+            --ungu: #8b5cf6;
+            --hijau: #22c55e;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--biru-tua), var(--biru-sedang), var(--biru));
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: var(--putih);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .banner-area img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 0 1px rgba(100, 181, 246, 0.2) inset;
+            border: 2px solid rgba(100, 181, 246, 0.3);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--biru-muda), var(--biru-terang));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 30px;
+            color: var(--biru-terang);
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(100, 181, 246, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--biru-terang);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 40px 0 25px;
+            color: var(--biru-muda);
+            text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 22px 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 181, 246, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--biru-muda), var(--biru-terang));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--biru-muda);
+            box-shadow: 0 10px 30px rgba(100, 181, 246, 0.15);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card.hot {
+            border-color: var(--kuning);
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        .card.hot::before {
+            background: linear-gradient(90deg, var(--kuning), #f97316);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--putih);
+        }
+
+        .card-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .badge.hot {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fcd34d;
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .badge.instant {
+            background: rgba(100, 181, 246, 0.2);
+            color: var(--biru-terang);
+            border-color: rgba(100, 181, 246, 0.3);
+        }
+
+        .badge.premium {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .card-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--biru-terang);
+            margin-bottom: 15px;
+        }
+
+        .order-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--biru), var(--biru-muda));
+            color: var(--putih);
+            font-weight: 600;
+            border: none;
+            padding: 11px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(30, 136, 229, 0.25);
+        }
+
+        .order-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(30, 136, 229, 0.35);
+        }
+
+        .qris-section {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .qris-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--biru-terang);
+        }
+
+        .qris-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .qris-box {
+            background: var(--putih);
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 320px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border: 2px solid var(--biru-muda);
+        }
+
+        .qris-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            pointer-events: auto;
+            user-select: auto;
+            -webkit-user-drag: auto;
+        }
+
+        .qris-note {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--biru-terang);
+            text-decoration: none;
+        }
+
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: transform 0.3s ease;
+            color: white;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* === POPUP FORM PEMESANAN === */
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        .form-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .form-popup {
+            background: var(--putih);
+            color: var(--hitam);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px 25px;
+            position: relative;
+            transform: translateY(30px);
+            transition: transform 0.3s ease;
+        }
+
+        .form-overlay.active .form-popup {
+            transform: translateY(0);
+        }
+
+        .form-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .form-close:hover {
+            color: var(--biru);
+        }
+
+        .form-popup h2 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--biru-tua);
+            padding-right: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--biru);
+        }
+
+        .form-group input:disabled {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .form-group textarea {
+            resize: none;
+            min-height: 90px;
+        }
+
+        .form-note {
+            background: #fffbeb;
+            border-left: 3px solid var(--kuning);
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 0.85rem;
+            color: #92400e;
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--hijau), #16a34a);
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 13px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+        }
+
+        .form-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+        }
+
+        /* Custom Alert */
+        .custom-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--putih);
+            color: var(--hitam);
+            padding: 18px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            z-index: 99999;
+            max-width: 320px;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 4px solid var(--biru);
+        }
+
+        .custom-alert.show {
+            transform: translateX(0);
+        }
+
+        .custom-alert p {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .stats-bar { gap: 20px; }
+            .stat-num { font-size: 1.2rem; }
+            .custom-alert { left: 15px; right: 15px; max-width: unset; }
+        }
+        
+        .typing-text {
+  color: var(--biru-terang);
+  font-size: 1rem;
+  min-height: 1px; /* biar ganti kalimat tidak lompat */
+  
+  padding-right: 5px;
+  display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Custom Alert Box -->
+<div id="customAlert" class="custom-alert">
+    <p id="alertText"></p>
+</div>
+
+<!-- Form Pemesanan Popup -->
+<div id="formOverlay" class="form-overlay">
+    <div class="form-popup">
+        <span class="form-close" onclick="closeForm()">&times;</span>
+        <h2>Form Pemesanan</h2>
+
+        <div class="form-group">
+            <label>Nama Paket:</label>
+            <input type="text" id="formPaket" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Harga:</label>
+            <input type="text" id="formHarga" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Nama Kamu:</label>
+            <input type="text" id="formNama" placeholder="Masukkan nama kamu">
+        </div>
+
+        <div class="form-group">
+            <label>Nomor WhatsApp:</label>
+            <input type="tel" id="formWa" placeholder="Contoh: 0812xxxx">
+        </div>
+
+        <div class="form-group">
+            <label>Catatan / Link Akun IG:</label>
+            <textarea id="formCatatan" placeholder="Tulis Link Akun IG / info lainnya"></textarea>
+        </div>
+
+        <div class="form-note">
+            ⚠️ Jangan lupa kirim bukti bayar ke admin setelah melakukan pembayaran!
+        </div>
+
+        <button class="form-submit" onclick="kirimKeWA()">
+            💬 Kirim Pesanan via WhatsApp
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <header>
+        <!-- Banner: pakai file .jpg -->
+        <div class="banner-area">
+            <img src="banner.jpg" alt="Banner YOBSZ STORE">
+        </div>
+        <!-- Foto Profil: pakai file .jpg -->
+        <img src="profile.jpg" alt="Profil YOBSZ STORE" class="logo-profile">
+        <h1>YOBSZ STORE</h1>
+        <p class="tagline">Suntik Followers Instagram — Cepat & Terpercaya</p>
+<p class="typing-text" id="typingText"></p>
+
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Amanah</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">24/7</div>
+                <div class="stat-label">Online</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Terpercaya</div>
+            </div>
+        </div>
+    </header>
+
+    <h2 class="section-title">SUNTIK FOLLOWERS IG</h2>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title">10 Followers</div>
+            <div class="card-price">Rp 1.300</div>
+            <button class="order-btn" onclick="openForm('10 Followers IG', 1300)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">20 Followers</div>
+            <div class="card-price">Rp 1.700</div>
+            <button class="order-btn" onclick="openForm('20 Followers IG', 1700)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">30 Followers</div>
+            <div class="card-price">Rp 2.000</div>
+            <button class="order-btn" onclick="openForm('30 Followers IG', 2000)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">40 Followers</div>
+            <div class="card-price">Rp 2.500</div>
+            <button class="order-btn" onclick="openForm('40 Followers IG', 2500)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">50 Followers</div>
+            <div class="card-price">Rp 2.800</div>
+            <button class="order-btn" onclick="openForm('50 Followers IG', 2800)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">60 Followers</div>
+            <div class="card-price">Rp 3.300</div>
+            <button class="order-btn" onclick="openForm('60 Followers IG', 3300)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">70 Followers</div>
+            <div class="card-price">Rp 3.700</div>
+            <button class="order-btn" onclick="openForm('70 Followers IG', 3700)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">80 Followers</div>
+            <div class="card-price">Rp 4.000</div>
+            <button class="order-btn" onclick="openForm('80 Followers IG', 4000)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">90 Followers</div>
+            <div class="card-price">Rp 4.500</div>
+            <button class="order-btn" onclick="openForm('90 Followers IG', 4500)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">100 Followers</div>
+            <div class="card-price">Rp 5.000</div>
+            <button class="order-btn" onclick="openForm('100 Followers IG', 5000)">Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <div class="card-title">123 Followers</div>
+            <div class="card-price">Rp 5.800</div>
+            <button class="order-btn" onclick="openForm('123 Followers IG', 5800)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">150 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+            </div>
+            <div class="card-price">Rp 6.900</div>
+            <button class="order-btn" onclick="openForm('150 Followers IG', 6900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">200 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+            </div>
+            <div class="card-price">Rp 8.900</div>
+            <button class="order-btn" onclick="openForm('200 Followers IG', 8900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">250 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+            </div>
+            <div class="card-price">Rp 10.900</div>
+            <button class="order-btn" onclick="openForm('250 Followers IG', 10900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">300 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+            </div>
+            <div class="card-price">Rp 12.900</div>
+            <button class="order-btn" onclick="openForm('300 Followers IG', 12900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">350 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+            </div>
+            <div class="card-price">Rp 14.900</div>
+            <button class="order-btn" onclick="openForm('350 Followers IG', 14900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">400 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+            </div>
+            <div class="card-price">Rp 16.900</div>
+            <button class="order-btn" onclick="openForm('400 Followers IG', 16900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">450 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+            </div>
+            <div class="card-price">Rp 18.900</div>
+            <button class="order-btn" onclick="openForm('450 Followers IG', 18900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">500 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+                                <span class="badge premium">PREMIUM💎</span>
+            </div>
+            <div class="card-price">Rp 20.900</div>
+            <button class="order-btn" onclick="openForm('500 Followers IG', 20900)">Pesan Sekarang</button>
+        </div>
+        <div class="card hot">
+            <div class="card-title">1000 Followers</div>
+            <div class="card-badges">
+                <span class="badge hot">HOT🔥</span>
+                <span class="badge instant">INSTANT♻️</span>
+                <span class="badge premium">PREMIUM💎</span>
+            </div>
+            <div class="card-price">Rp 40.900</div>
+            <button class="order-btn" onclick="openForm('1000 Followers IG', 40900)">Pesan Sekarang</button>
+        </div>
+    </div>
+
+    <section class="qris-section">
+        <h3 class="qris-title">BAYAR PAKAI QRIS</h3>
+        <div class="qris-container">
+            <div class="qris-box qris-area">
+                <!-- QRIS: pakai file .jpg -->
+                <img src="qrisyobsz.jpg" alt="QRIS Pembayaran">
+                <p class="qris-note">Scan QRIS di atas untuk pembayaran<br>Konfirmasi bukti bayar ke Admin</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 YOBSZ STORE | Semua Hak Dilindungi</p>
+        <p>Admin: <a href="https://wa.me/6281314347426" target="_blank">+62 813-1434-7426</a></p>
+    </footer>
+</div>
+
+<!-- Tombol WA Mengambang — emot dibiarkan -->
+<a href="https://wa.me/6281314347426" target="_blank" class="wa-float">💬</a>
+
+<script>
+    const ADMIN_WA = '6281314347426';
+    let selectedPaket = '';
+    let selectedHarga = 0;
+
+    function showAlert(message, duration = 3000) {
+        const alertBox = document.getElementById('customAlert');
+        const alertText = document.getElementById('alertText');
+        alertBox.classList.remove('show');
+        void alertBox.offsetWidth;
+        alertText.textContent = message;
+        alertBox.classList.add('show');
+        clearTimeout(window.alertTimer);
+        window.alertTimer = setTimeout(() => {
+            alertBox.classList.remove('show');
+        }, duration);
+    }
+
+    // Buka Form Pemesanan
+    function openForm(paket, harga) {
+        selectedPaket = paket;
+        selectedHarga = harga;
+        document.getElementById('formPaket').value = paket;
+        document.getElementById('formHarga').value = 'Rp ' + harga.toLocaleString('id-ID');
+        // Kosongkan input sebelumnya
+        document.getElementById('formNama').value = '';
+        document.getElementById('formWa').value = '';
+        document.getElementById('formCatatan').value = '';
+        // Tampilkan form
+        document.getElementById('formOverlay').classList.add('active');
+        showAlert('Form pemesanan dibuka', 2000);
+    }
+
+    // Tutup Form
+    function closeForm() {
+        document.getElementById('formOverlay').classList.remove('active');
+        showAlert('Form ditutup', 2000);
+    }
+
+    // Kirim Data ke WhatsApp
+    function kirimKeWA() {
+        const nama = document.getElementById('formNama').value.trim();
+        const noWa = document.getElementById('formWa').value.trim();
+        const catatan = document.getElementById('formCatatan').value.trim();
+
+        // Validasi sederhana
+        if (!nama) {
+            showAlert('Silakan isi nama kamu dulu', 2500);
+            return;
+        }
+        if (!noWa) {
+            showAlert('Silakan isi nomor WhatsApp dulu', 2500);
+            return;
+        }
+
+        // Susun pesan
+        let pesan = `Halo Admin YOBSZ STORE, saya mau pesan:%0A%0A`;
+        pesan += `📦 Paket: ${selectedPaket}%0A`;
+        pesan += `💰 Harga: Rp ${selectedHarga.toLocaleString('id-ID')}%0A`;
+        pesan += `👤 Nama: ${nama}%0A`;
+        pesan += `📱 No. WA: ${noWa}%0A`;
+        if (catatan) pesan += `📝 Catatan: ${catatan}%0A`;
+        pesan += `%0ASilakan diproses, terima kasih.`;
+
+        // Buka WhatsApp
+        const waLink = `https://wa.me/${ADMIN_WA}?text=${pesan}`;
+        window.open(waLink, '_blank');
+
+        // Tutup form & beri notifikasi
+        closeForm();
+        showAlert('Membuka WhatsApp...', 1500);
+    }
+
+    // Klik luar form untuk menutup
+    document.getElementById('formOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeForm();
+    });
+
+    // Proteksi konten
+    document.addEventListener('contextmenu', e => {
+        if (!e.target.closest('.qris-area')) {
+            e.preventDefault();
+            showAlert('Tidak dapat menyalin atau mengunduh', 2000);
+        }
+    });
+
+    document.addEventListener('touchstart', e => {
+        if (e.target.tagName === 'IMG' && !e.target.closest('.qris-area')) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    document.addEventListener('keydown', e => {
+        if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'u' || e.key === 'c' || e.key === 'p')) {
+            e.preventDefault();
+            showAlert('Aksi dinonaktifkan', 2000);
+        }
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+            e.preventDefault();
+        }
+    });
+    
+    // Daftar kalimat yang mau ditampilkan bergantian
+const kalimat = [
+  "Suntik Followers IG Cepat",
+  "Followers IG Permanen",
+  "Bisa Pesan Langsung via WhatsApp",
+  "Amanah & Terpercaya"
+];
+
+let indexKalimat = 0;
+let indexHuruf = 0;
+let hapus = false;
+const kecepatan = 50; // ms, lebih kecil = lebih cepat
+
+function ketikTeks() {
+  const sekarang = kalimat[indexKalimat];
+  const el = document.getElementById("typingText");
+
+  if (!hapus) {
+    // Mengetik huruf satu per satu
+    el.textContent = sekarang.slice(0, indexHuruf + 1);
+    indexHuruf++;
+    // Kalau sudah selesai mengetik → tunggu, lalu mulai hapus
+    if (indexHuruf === sekarang.length) {
+      hapus = true;
+      setTimeout(ketikTeks, 2000); // jeda 2 detik sebelum hapus
+      return;
+    }
+  } else {
+    // Menghapus huruf satu per satu
+    el.textContent = sekarang.slice(0, indexHuruf - 1);
+    indexHuruf--;
+    // Kalau sudah bersih → ganti kalimat berikutnya
+    if (indexHuruf === 0) {
+      hapus = false;
+      indexKalimat = (indexKalimat + 1) % kalimat.length; // loop otomatis
+    }
+  }
+
+  setTimeout(ketikTeks, kecepatan);
+}
+
+// Mulai jalankan saat halaman siap
+window.onload = ketikTeks;
+
+</script>
+
+</body>
+</html>
